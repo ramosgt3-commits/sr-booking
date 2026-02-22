@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free Interior Upgrade Estimate</title>
+<title>SR Home Repair | Free Estimate</title>
 
 <style>
 * {
@@ -21,17 +21,18 @@ html, body {
 .header {
   background-color: #2c2c2c;
   color: white;
-  padding: 20px;
+  padding: 25px 20px;
   text-align: center;
 }
 
 .header h1 {
   margin: 0;
-  font-size: 24px;
+  font-size: 26px;
+  letter-spacing: 1px;
 }
 
 .header p {
-  margin: 5px 0 0;
+  margin: 6px 0 0;
   font-size: 14px;
   opacity: 0.9;
 }
@@ -76,6 +77,10 @@ textarea {
   resize: vertical;
 }
 
+input[type="file"] {
+  padding: 8px;
+}
+
 button {
   width: 100%;
   padding: 16px;
@@ -105,7 +110,7 @@ button:hover {
 <body>
 
 <div class="header">
-  <h1>Your Business Name</h1>
+  <h1>SR Home Repair</h1>
   <p>Interior Upgrades • Repairs • Professional Craftsmanship</p>
 </div>
 
@@ -116,7 +121,9 @@ button:hover {
 Fill out the form below and we’ll contact you within 24 hours.
 </p>
 
-<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+<form action="https://formspree.io/f/YOUR_FORM_ID" 
+      method="POST" 
+      enctype="multipart/form-data">
 
 <label for="name">Full Name *</label>
 <input type="text" id="name" name="name" required>
@@ -144,6 +151,9 @@ Fill out the form below and we’ll contact you within 24 hours.
 
 <label for="details">Project Details</label>
 <textarea id="details" name="details" rows="5" placeholder="Tell us about the work you'd like completed..."></textarea>
+
+<label for="photo">Upload Photos (Optional)</label>
+<input type="file" id="photo" name="photo" accept="image/*">
 
 <button type="submit">Get My Free Estimate</button>
 
