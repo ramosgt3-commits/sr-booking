@@ -1,141 +1,150 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>SR Home Repair Co. | Service Request</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f5f7fa;
-            color: #333;
-        }
+<title>SR Home Repair Co. | Service Request</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-        .header {
-            background: white;
-            padding: 30px 20px;
-            text-align: center;
-            border-bottom: 1px solid #e2e2e2;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #f8f9fb;
+    color: #222;
+}
 
-        .header h1 {
-            margin: 0;
-            font-size: 26px;
-        }
+.wrapper {
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
 
-        .header p {
-            margin-top: 8px;
-            color: #666;
-            font-size: 14px;
-        }
+h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
 
-        .container {
-            max-width: 650px;
-            margin: 30px auto;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
+.subtext {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 40px;
+}
 
-        input, textarea, select {
-            width: 100%;
-            padding: 12px;
-            margin-top: 12px;
-            border-radius: 6px;
-            border: 1px solid #ddd;
-            font-size: 14px;
-        }
+form {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
 
-        textarea {
-            resize: vertical;
-        }
+label {
+    display: block;
+    margin-top: 25px;
+    font-size: 15px;
+    font-weight: 600;
+}
 
-        button {
-            width: 100%;
-            padding: 14px;
-            margin-top: 20px;
-            background: #2d6cdf;
-            border: none;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 6px;
-            cursor: pointer;
-        }
+input, textarea, select {
+    width: 100%;
+    padding: 14px;
+    margin-top: 8px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
 
-        button:hover {
-            background: #1f55b5;
-        }
+textarea {
+    resize: vertical;
+}
 
-        .trust {
-            margin-top: 25px;
-            font-size: 14px;
-            color: #555;
-            line-height: 1.6;
-        }
+button {
+    margin-top: 35px;
+    width: 100%;
+    padding: 16px;
+    background: #2f6df6;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
 
-        .trust strong {
-            display: block;
-            margin-bottom: 6px;
-        }
+button:hover {
+    background: #1f57c7;
+}
 
-        .footer {
-            text-align: center;
-            font-size: 13px;
-            padding: 30px 10px;
-            color: #777;
-        }
+.expect {
+    margin-top: 50px;
+    font-size: 16px;
+    color: #444;
+    line-height: 1.8;
+}
 
-        .footer span {
-            display: block;
-            margin-top: 5px;
-        }
-    </style>
+.footer {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 14px;
+    color: #777;
+}
+</style>
 </head>
+
 <body>
 
-<div class="header">
-    <h1>Request a Service Estimate</h1>
-    <p>Reliable home repair & rental maintenance solutions serving Waterloo and surrounding areas</p>
+<div class="wrapper">
+
+<h1>Request a Service Estimate</h1>
+<div class="subtext">
+Simple. Clear. No pressure.  
+Tell us what you need and we'll follow up promptly.
 </div>
 
-<div class="container">
-    <form action="https://formsubmit.co/mario@srhomerepair.com" method="POST">
-        <input type="text" name="Name" placeholder="Full Name" required>
-        <input type="tel" name="Phone" placeholder="Phone Number" required>
-        <input type="email" name="Email" placeholder="Email Address" required>
-        <input type="text" name="Address" placeholder="Service Address" required>
+<form action="https://formsubmit.co/mario@srhomerepair.com" method="POST">
 
-        <select name="Service" required>
-            <option value="">Select Service Type</option>
-            <option>Drywall Repair</option>
-            <option>Interior Painting</option>
-            <option>Flooring Installation</option>
-            <option>Kitchen / Bathroom Updates</option>
-            <option>Turnover / Rental Maintenance</option>
-            <option>General Repairs</option>
-        </select>
+<label>Full Name</label>
+<input type="text" name="Name" required>
 
-        <textarea name="Details" placeholder="Brief description of the work needed"></textarea>
-        <input type="date" name="Preferred Date">
+<label>Phone Number</label>
+<input type="tel" name="Phone" required>
 
-        <button type="submit">Submit Service Request</button>
-    </form>
+<label>Email Address</label>
+<input type="email" name="Email" required>
 
-    <div class="trust">
-        <strong>What to Expect:</strong>
-        ✔ Clear communication<br>
-        ✔ Professional workmanship<br>
-        ✔ Prompt response times<br>
-        ✔ Respectful service in your home
-    </div>
+<label>Service Address</label>
+<input type="text" name="Address" required>
+
+<label>Type of Service</label>
+<select name="Service" required>
+    <option value="">Select one</option>
+    <option>Drywall Repair</option>
+    <option>Interior Painting</option>
+    <option>Flooring Installation</option>
+    <option>Kitchen / Bathroom Updates</option>
+    <option>Turnover / Rental Maintenance</option>
+    <option>General Repairs</option>
+</select>
+
+<label>Brief Description</label>
+<textarea name="Details" rows="4"></textarea>
+
+<label>Preferred Date</label>
+<input type="date" name="Preferred Date">
+
+<button type="submit">Submit Request</button>
+
+</form>
+
+<div class="expect">
+<strong>What happens next?</strong><br><br>
+• We'll review your request<br>
+• You'll receive a prompt response<br>
+• We'll schedule a walkthrough or provide next steps
 </div>
 
 <div class="footer">
-    SR Home Repair Co.
-    <span>Waterloo, IA</span>
-    <span>mario@srhomerepair.com | (319) 893-1161</span>
+SR Home Repair Co. | Waterloo, IA<br>
+mario@srhomerepair.com | (319) 893-1161
+</div>
+
 </div>
 
 </body>
