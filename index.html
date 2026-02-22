@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SR Home Repair Co. - Book a Service</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        button {
+            background: black;
+            color: white;
+            padding: 12px;
+            border: none;
+            margin-top: 15px;
+            width: 100%;
+            font-size: 16px;
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Book a Service</h2>
+    <form action="https://formsubmit.co/mario@srhomerepair.com" method="POST">
+        <input type="text" name="Name" placeholder="Full Name" required>
+        <input type="tel" name="Phone" placeholder="Phone Number" required>
+        <input type="email" name="Email" placeholder="Email Address" required>
+        <input type="text" name="Address" placeholder="Service Address" required>
+
+        <select name="Service">
+            <option>Drywall Repair</option>
+            <option>Painting</option>
+            <option>Flooring Installation</option>
+            <option>Kitchen / Bath Update</option>
+            <option>Turnover / Rental Repair</option>
+            <option>Other</option>
+        </select>
+
+        <textarea name="Details" placeholder="Describe the work needed"></textarea>
+        <input type="date" name="Preferred Date">
+
+        <button type="submit">Submit Booking Request</button>
+    </form>
+</div>
+</body>
+</html>
