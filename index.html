@@ -3,183 +3,122 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free Estimate | SR Home Repair Co.</title>
+<title>Request a Free Estimate</title>
 
 <style>
-:root {
-  --text:#1f2937;
-  --muted:#6b7280;
-  --line:#e5e7eb;
-  --accent:#2563eb;
-  --bg:#f9fafb;
-}
-
-* { box-sizing: border-box; }
-
 body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
   margin: 0;
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-  background: var(--bg);
-  color: var(--text);
+  padding: 20px;
 }
 
-.wrapper {
-  max-width: 720px;
-  margin: 60px auto;
+.container {
+  max-width: 650px;
+  margin: auto;
   background: white;
-  padding: 50px;
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 h1 {
-  margin: 0 0 10px;
-  font-size: 30px;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
-.sub {
-  margin: 0 0 25px;
-  color: var(--muted);
-  font-size: 16px;
-}
-
-.hours {
-  font-size: 14px;
-  color: var(--muted);
-  margin-bottom: 35px;
-  line-height: 1.5;
-}
-
-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.full {
-  grid-column: 1 / -1;
+p.subtitle {
+  text-align: center;
+  color: #555;
+  margin-bottom: 30px;
 }
 
 label {
-  font-size: 13px;
-  font-weight: 600;
-  margin-bottom: 6px;
+  font-weight: bold;
   display: block;
+  margin-top: 20px;
+  margin-bottom: 6px;
 }
 
-input, select, textarea {
+input, textarea, select {
   width: 100%;
-  padding: 12px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  font-size: 15px;
-  outline: none;
-  transition: 0.2s;
-}
-
-input:focus, select:focus, textarea:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
 textarea {
   resize: vertical;
-  min-height: 120px;
 }
 
 button {
-  grid-column: 1 / -1;
-  padding: 14px;
-  background: var(--accent);
+  width: 100%;
+  padding: 16px;
+  margin-top: 25px;
+  font-size: 18px;
+  background-color: #2d6cdf;
   color: white;
   border: none;
-  border-radius: 8px;
-  font-size: 16px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: 0.2s;
 }
 
 button:hover {
-  opacity: 0.9;
+  background-color: #1f4fbf;
 }
 
-.footer {
-  margin-top: 30px;
-  font-size: 13px;
-  color: var(--muted);
+.small-text {
+  font-size: 14px;
+  color: #666;
+  margin-top: 10px;
   text-align: center;
-}
-
-@media (max-width: 700px) {
-  .wrapper {
-    margin: 30px 20px;
-    padding: 30px;
-  }
-  form {
-    grid-template-columns: 1fr;
-  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="wrapper">
+<div class="container">
 
-  <h1>Request a Free Estimate</h1>
-  <p class="sub">
-    Tell us about your project and we’ll get back to you as soon as possible.
-  </p>
+<h1>Request a Free Estimate</h1>
+<p class="subtitle">Fill out the form below and we will contact you shortly.</p>
 
-  <div class="hours">
-    <strong>Business Hours:</strong><br>
-    Monday – Friday: 8am – 6pm<br>
-    Saturday: 9am – 3pm<br>
-    Sunday: Closed
-  </div>
+<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
 
-  <form action="https://formsubmit.co/mario@srhomerepair.com" method="POST">
-    <input type="hidden" name="_subject" value="New Estimate Request - SR Home Repair Co.">
-    <input type="hidden" name="_captcha" value="false">
+<label for="name">Full Name *</label>
+<input type="text" id="name" name="name" required>
 
-    <div>
-      <label>Full Name</label>
-      <input type="text" name="name" required>
-    </div>
+<label for="phone">Phone Number *</label>
+<input type="tel" id="phone" name="phone" required>
 
-    <div>
-      <label>Phone Number</label>
-      <input type="tel" name="phone" required>
-    </div>
+<label for="email">Email Address *</label>
+<input type="email" id="email" name="email" required>
 
-    <div>
-      <label>Email</label>
-      <input type="email" name="email">
-    </div>
+<label for="service">Service Needed *</label>
+<select id="service" name="service" required>
+  <option value="">Select a service</option>
+  <option>General Service</option>
+  <option>Installation</option>
+  <option>Repair</option>
+  <option>Maintenance</option>
+  <option>Other</option>
+</select>
 
-    <div>
-      <label>Service Type</label>
-      <select name="service" required>
-        <option value="">Select Service</option>
-        <option>Rental Turnover</option>
-        <option>Drywall & Painting</option>
-        <option>Flooring Installation</option>
-        <option>Kitchen / Bath Update</option>
-        <option>General Repairs</option>
-      </select>
-    </div>
+<label for="address">Project Address</label>
+<input type="text" id="address" name="address">
 
-    <div class="full">
-      <label>Project Details</label>
-      <textarea name="details"></textarea>
-    </div>
+<label for="details">Project Details</label>
+<textarea id="details" name="details" rows="5" placeholder="Please describe your project..."></textarea>
 
-    <button type="submit">Submit Estimate Request</button>
-  </form>
+<button type="submit">Submit Request</button>
 
-  <div class="footer">
-    SR Home Repair Co. • Waterloo, Iowa
-  </div>
+</form>
+
+<p class="small-text">
+We respect your privacy. Your information will never be shared.
+</p>
 
 </div>
 
