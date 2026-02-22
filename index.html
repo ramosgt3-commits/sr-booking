@@ -10,9 +10,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+body {
   margin: 0;
-  padding: 0;
   font-family: Arial, sans-serif;
   background-color: #f5f5f5;
   color: #333;
@@ -28,7 +27,6 @@ html, body {
 .header h1 {
   margin: 0;
   font-size: 26px;
-  letter-spacing: 1px;
 }
 
 .header p {
@@ -121,21 +119,21 @@ button:hover {
 Fill out the form below and we’ll contact you within 24 hours.
 </p>
 
-<form action="https://formspree.io/f/YOUR_FORM_ID" 
-      method="POST" 
+<form action="https://formspree.io/f/YOUR_FORM_ID"
+      method="POST"
       enctype="multipart/form-data">
 
-<label for="name">Full Name *</label>
-<input type="text" id="name" name="name" required>
+<label>Full Name *</label>
+<input type="text" name="name" required>
 
-<label for="phone">Phone Number *</label>
-<input type="tel" id="phone" name="phone" required>
+<label>Phone Number *</label>
+<input type="tel" name="phone" required>
 
-<label for="email">Email Address *</label>
-<input type="email" id="email" name="email" required>
+<label>Email Address *</label>
+<input type="email" name="email" required>
 
-<label for="service">Type of Project *</label>
-<select id="service" name="service" required>
+<label>Type of Project *</label>
+<select name="service" required>
   <option value="">Select project type</option>
   <option>Bathroom Upgrade</option>
   <option>Kitchen Upgrade</option>
@@ -146,21 +144,23 @@ Fill out the form below and we’ll contact you within 24 hours.
   <option>Other</option>
 </select>
 
-<label for="address">Project Address</label>
-<input type="text" id="address" name="address">
+<label>Project Address</label>
+<input type="text" name="address">
 
-<label for="details">Project Details</label>
-<textarea id="details" name="details" rows="5" placeholder="Tell us about the work you'd like completed..."></textarea>
+<label>Project Details</label>
+<textarea name="details" rows="5" placeholder="Tell us about the work you'd like completed..."></textarea>
 
-<label for="photo">Upload Photos (Optional)</label>
-<input type="file" id="photo" name="photo" accept="image/*">
+<label>Upload Photos (Optional)</label>
+<input type="file" name="photo" accept="image/*">
+
+<input type="hidden" name="_redirect" value="https://YOURUSERNAME.github.io/YOURREPO/thank-you.html">
 
 <button type="submit">Get My Free Estimate</button>
 
 </form>
 
 <p class="footer-note">
-Registered Contractor – State of Iowa #C151415 • Insured • Reliable Service
+Registered Contractor – State of Iowa #C151415 • Fully Insured
 </p>
 
 </div>
