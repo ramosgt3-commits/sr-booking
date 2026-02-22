@@ -8,30 +8,46 @@
         body {
             margin: 0;
             font-family: 'Segoe UI', Arial, sans-serif;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            background: linear-gradient(135deg, #1f2937, #3b82f6);
         }
 
         .wrapper {
-            max-width: 650px;
-            margin: 40px auto;
+            max-width: 700px;
+            margin: 60px auto;
             background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto 25px auto;
+            max-width: 200px;
         }
 
         h1 {
             text-align: center;
             margin-bottom: 10px;
             font-size: 28px;
-            color: #1e3c72;
+            color: #1f2937;
         }
 
         .subtitle {
             text-align: center;
             font-size: 15px;
-            color: #666;
-            margin-bottom: 30px;
+            color: #6b7280;
+            margin-bottom: 35px;
+        }
+
+        .hours {
+            background: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 25px;
+            text-align: center;
+            color: #374151;
         }
 
         label {
@@ -39,22 +55,22 @@
             font-size: 14px;
             display: block;
             margin-bottom: 6px;
-            margin-top: 18px;
+            margin-top: 20px;
         }
 
         input, textarea, select {
             width: 100%;
-            padding: 12px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
+            padding: 13px;
+            border-radius: 8px;
+            border: 1px solid #d1d5db;
             font-size: 15px;
             transition: 0.2s;
         }
 
         input:focus, textarea:focus, select:focus {
-            border-color: #2a5298;
+            border-color: #3b82f6;
             outline: none;
-            box-shadow: 0 0 5px rgba(42,82,152,0.3);
+            box-shadow: 0 0 8px rgba(59,130,246,0.3);
         }
 
         textarea {
@@ -63,47 +79,83 @@
 
         button {
             width: 100%;
-            margin-top: 25px;
-            padding: 14px;
+            margin-top: 35px;
+            padding: 16px;
             font-size: 16px;
             font-weight: bold;
-            background: #1e3c72;
+            background: #1f2937;
             color: white;
             border: none;
-            border-radius: 6px;
+            border-radius: 8px;
             cursor: pointer;
             transition: 0.3s;
         }
 
         button:hover {
-            background: #16325c;
+            background: #111827;
         }
 
         .footer-note {
             text-align: center;
             font-size: 13px;
-            color: #555;
-            margin-top: 20px;
+            color: #6b7280;
+            margin-top: 30px;
+            line-height: 1.6;
+        }
+
+        .success-message {
+            display: none;
+            text-align: center;
+            font-size: 16px;
+            color: green;
+            margin-top: 25px;
+            font-weight: 600;
         }
 
         @media (max-width: 600px) {
             .wrapper {
-                margin: 20px;
-                padding: 25px;
+                margin: 25px;
+                padding: 30px;
             }
         }
     </style>
+
+    <script>
+        function showSuccess(event) {
+            event.preventDefault();
+            var form = event.target;
+            fetch(form.action, {
+                method: "POST",
+                body: new FormData(form)
+            }).then(response => {
+                form.reset();
+                document.getElementById("success").style.display = "block";
+            }).catch(error => {
+                alert("There was an issue submitting the form.");
+            });
+        }
+    </script>
 </head>
 
 <body>
 
 <div class="wrapper">
+
+    <img src="logo.png" alt="SR Home Repair Co Logo" class="logo">
+
     <h1>Request a Free Estimate</h1>
     <div class="subtitle">
-        Fast response. Clear pricing. Professional work.
+        Reliable service. Clear communication. Professional results.
     </div>
 
-    <form action="https://formsubmit.co/mario@srhomerepair.com" method="POST">
+    <div class="hours">
+        <strong>Business Hours:</strong><br>
+        Monday – Friday: 8:00 AM – 6:00 PM<br>
+        Saturday: 9:00 AM – 3:00 PM<br>
+        Sunday: Closed
+    </div>
+
+    <form action="https://formsubmit.co/mario@srhomerepair.com" method="POST" enctype="multipart/form-data" onsubmit="showSuccess(event)">
 
         <input type="hidden" name="_subject" value="New Estimate Request - SR Home Repair Co.">
         <input type="hidden" name="_captcha" value="false">
@@ -130,14 +182,28 @@
             <option>General Repairs</option>
         </select>
 
+        <label>Preferred Contact Time</label>
+        <select name="contact_time">
+            <option>During Business Hours</option>
+            <option>Morning (8am–12pm)</option>
+            <option>Afternoon (12pm–3pm Sat / 12pm–6pm Weekdays)</option>
+        </select>
+
+        <label>Upload Photos (Optional)</label>
+        <input type="file" name="attachment" multiple>
+
         <label>Project Details</label>
         <textarea name="details" rows="5" placeholder="Briefly describe the work needed..."></textarea>
 
         <button type="submit">Submit Estimate Request</button>
 
+        <div id="success" class="success-message">
+            Thank you. Your estimate request has been submitted successfully.
+        </div>
+
         <div class="footer-note">
             SR Home Repair Co. • Waterloo, Iowa<br>
-            Most estimate requests are answered within 24 hours.
+            Most requests are answered within 24 hours.
         </div>
 
     </form>
