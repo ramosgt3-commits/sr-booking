@@ -1,44 +1,80 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>SR Home Repair Co. - Book a Service</title>
+    <title>SR Home Repair Co. | Book a Service</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body {
-            font-family: Arial;
-            background: #f4f4f4;
-            padding: 20px;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: white;
+        }
+        .hero {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(to right, #000000, #1c1c1c);
+        }
+        .hero h1 {
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        .hero p {
+            color: #ccc;
+            font-size: 14px;
         }
         .container {
-            max-width: 500px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 30px auto;
+            background: #1e1e1e;
+            padding: 25px;
+            border-radius: 10px;
         }
         input, textarea, select {
             width: 100%;
-            padding: 10px;
-            margin-top: 10px;
+            padding: 12px;
+            margin-top: 12px;
+            border-radius: 6px;
+            border: none;
+            background: #2a2a2a;
+            color: white;
         }
         button {
-            background: black;
-            color: white;
-            padding: 12px;
-            border: none;
-            margin-top: 15px;
             width: 100%;
+            padding: 14px;
+            margin-top: 20px;
+            background: #d4af37;
+            border: none;
+            font-weight: bold;
             font-size: 16px;
+            cursor: pointer;
+            border-radius: 6px;
         }
-        h2 {
+        button:hover {
+            background: #b9972e;
+        }
+        .trust {
             text-align: center;
+            margin-top: 25px;
+            font-size: 13px;
+            color: #aaa;
+        }
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            padding: 20px;
+            color: #777;
         }
     </style>
 </head>
 <body>
+
+<div class="hero">
+    <h1>Request a Service Estimate</h1>
+    <p>Reliable home repair & rental maintenance solutions</p>
+</div>
+
 <div class="container">
-    <h2>Book a Service</h2>
     <form action="https://formsubmit.co/mario@srhomerepair.com" method="POST">
         <input type="text" name="Name" placeholder="Full Name" required>
         <input type="tel" name="Phone" placeholder="Phone Number" required>
@@ -46,19 +82,32 @@
         <input type="text" name="Address" placeholder="Service Address" required>
 
         <select name="Service">
+            <option value="">Select Service Type</option>
             <option>Drywall Repair</option>
-            <option>Painting</option>
+            <option>Interior Painting</option>
             <option>Flooring Installation</option>
-            <option>Kitchen / Bath Update</option>
-            <option>Turnover / Rental Repair</option>
+            <option>Kitchen / Bathroom Update</option>
+            <option>Turnover / Rental Maintenance</option>
             <option>Other</option>
         </select>
 
-        <textarea name="Details" placeholder="Describe the work needed"></textarea>
+        <textarea name="Details" placeholder="Brief description of the work needed"></textarea>
         <input type="date" name="Preferred Date">
 
-        <button type="submit">Submit Booking Request</button>
+        <button type="submit">Submit Request</button>
     </form>
+
+    <div class="trust">
+        ✔ Locally Operated<br>
+        ✔ Professional & Detail-Oriented<br>
+        ✔ Prompt Response Times
+    </div>
 </div>
+
+<div class="footer">
+    SR Home Repair Co. | Waterloo, IA<br>
+    mario@srhomerepair.com | (319) 893-1161
+</div>
+
 </body>
 </html>
