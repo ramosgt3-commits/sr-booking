@@ -1,75 +1,145 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Estimate Request | SR Home Repair Co.</title>
+    <title>Request an Estimate | SR Home Repair Co.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
             margin: 0;
-            padding: 20px;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
         }
-        .container {
-            max-width: 600px;
-            margin: auto;
+
+        .wrapper {
+            max-width: 650px;
+            margin: 40px auto;
             background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
         }
+
         h1 {
             text-align: center;
+            margin-bottom: 10px;
+            font-size: 28px;
+            color: #1e3c72;
         }
+
+        .subtitle {
+            text-align: center;
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-weight: 600;
+            font-size: 14px;
+            display: block;
+            margin-bottom: 6px;
+            margin-top: 18px;
+        }
+
         input, textarea, select {
             width: 100%;
             padding: 12px;
-            margin-top: 10px;
-            margin-bottom: 20px;
+            border-radius: 6px;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            font-size: 15px;
+            transition: 0.2s;
         }
+
+        input:focus, textarea:focus, select:focus {
+            border-color: #2a5298;
+            outline: none;
+            box-shadow: 0 0 5px rgba(42,82,152,0.3);
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
         button {
-            background: black;
-            color: white;
-            padding: 14px;
             width: 100%;
-            border: none;
+            margin-top: 25px;
+            padding: 14px;
             font-size: 16px;
-            border-radius: 4px;
+            font-weight: bold;
+            background: #1e3c72;
+            color: white;
+            border: none;
+            border-radius: 6px;
             cursor: pointer;
+            transition: 0.3s;
         }
+
         button:hover {
-            background: #333;
+            background: #16325c;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 13px;
+            color: #555;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .wrapper {
+                margin: 20px;
+                padding: 25px;
+            }
         }
     </style>
 </head>
+
 <body>
 
-<div class="container">
+<div class="wrapper">
     <h1>Request a Free Estimate</h1>
-    <form action="https://formsubmit.co/YOUR-EMAIL-HERE" method="POST">
-        
-        <input type="text" name="name" placeholder="Full Name" required>
-        
-        <input type="tel" name="phone" placeholder="Phone Number" required>
-        
-        <input type="email" name="email" placeholder="Email Address" required>
-        
-        <input type="text" name="address" placeholder="Property Address" required>
-        
-        <select name="service">
-            <option value="">Select Service Type</option>
-            <option>Turnover / Rental Repair</option>
-            <option>Drywall & Paint</option>
+    <div class="subtitle">
+        Fast response. Clear pricing. Professional work.
+    </div>
+
+    <form action="https://formsubmit.co/mario@srhomerepair.com" method="POST">
+
+        <input type="hidden" name="_subject" value="New Estimate Request - SR Home Repair Co.">
+        <input type="hidden" name="_captcha" value="false">
+
+        <label>Full Name</label>
+        <input type="text" name="name" required>
+
+        <label>Phone Number</label>
+        <input type="tel" name="phone" required>
+
+        <label>Email Address</label>
+        <input type="email" name="email" required>
+
+        <label>Property Address</label>
+        <input type="text" name="address" required>
+
+        <label>Type of Service</label>
+        <select name="service" required>
+            <option value="">Select Service</option>
+            <option>Rental Turnover / Make Ready</option>
+            <option>Drywall & Painting</option>
             <option>Flooring Installation</option>
-            <option>Kitchen / Bath Update</option>
-            <option>General Repair</option>
+            <option>Kitchen or Bath Update</option>
+            <option>General Repairs</option>
         </select>
-        
-        <textarea name="details" rows="5" placeholder="Describe the project..."></textarea>
-        
+
+        <label>Project Details</label>
+        <textarea name="details" rows="5" placeholder="Briefly describe the work needed..."></textarea>
+
         <button type="submit">Submit Estimate Request</button>
+
+        <div class="footer-note">
+            SR Home Repair Co. • Waterloo, Iowa<br>
+            Most estimate requests are answered within 24 hours.
+        </div>
+
     </form>
 </div>
 
