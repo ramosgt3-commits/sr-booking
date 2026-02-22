@@ -1,290 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Request an Estimate | SR Home Repair Co.</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Estimate | SR Home Repair Co.</title>
 
-  <style>
-    :root{
-      --ink:#0f172a;
-      --muted:#475569;
-      --line:#e2e8f0;
-      --soft:#f8fafc;
-      --accent:#2563eb; /* positive, trustworthy blue */
-      --accent2:#22c55e; /* small positive green */
-    }
+<style>
+:root {
+  --text:#1f2937;
+  --muted:#6b7280;
+  --line:#e5e7eb;
+  --accent:#2563eb;
+  --bg:#f9fafb;
+}
 
-    * { box-sizing: border-box; }
+* { box-sizing: border-box; }
 
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-      color:var(--ink);
-      background: #ffffff;
-    }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  background: var(--bg);
+  color: var(--text);
+}
 
-    .topbar{
-      background: linear-gradient(90deg, var(--accent), #60a5fa);
-      padding: 18px 14px;
-    }
+.wrapper {
+  max-width: 720px;
+  margin: 60px auto;
+  background: white;
+  padding: 50px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+}
 
-    .shell{
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 18px 14px 40px;
-    }
+h1 {
+  margin: 0 0 10px;
+  font-size: 30px;
+}
 
-    .card{
-      margin-top: -22px;
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.10);
-      overflow: hidden;
-    }
+.sub {
+  margin: 0 0 25px;
+  color: var(--muted);
+  font-size: 16px;
+}
 
-    .head{
-      padding: 22px 22px 14px;
-      border-bottom: 1px solid var(--line);
-      background: var(--soft);
-      display:flex;
-      gap:16px;
-      align-items:center;
-      flex-wrap:wrap;
-    }
+.hours {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 35px;
+  line-height: 1.5;
+}
 
-    .logo{
-      width: 140px;
-      height: auto;
-      display:block;
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius: 12px;
-      padding:10px;
-    }
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
 
-    .titleblock{
-      flex:1;
-      min-width: 220px;
-    }
+.full {
+  grid-column: 1 / -1;
+}
 
-    h1{
-      margin:0 0 6px 0;
-      font-size: 22px;
-      letter-spacing: -0.2px;
-    }
+label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+}
 
-    .sub{
-      margin:0;
-      color:var(--muted);
-      font-size: 14px;
-      line-height: 1.35;
-    }
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.2s;
+}
 
-    .hours{
-      margin-top: 10px;
-      display:inline-flex;
-      gap:10px;
-      align-items:center;
-      padding: 10px 12px;
-      background: #ecfeff;
-      border:1px solid #bae6fd;
-      border-radius: 12px;
-      color:#0c4a6e;
-      font-size: 13px;
-    }
+input:focus, select:focus, textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+}
 
-    .dot{
-      width:10px;height:10px;border-radius:999px;background:var(--accent2);
-      box-shadow: 0 0 0 4px rgba(34,197,94,0.15);
-    }
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
 
-    form{
-      padding: 18px 22px 22px;
-    }
+button {
+  grid-column: 1 / -1;
+  padding: 14px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
 
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
+button:hover {
+  opacity: 0.9;
+}
 
-    @media (max-width: 720px){
-      .grid{ grid-template-columns: 1fr; }
-      .card{ margin-top: -16px; }
-    }
+.footer {
+  margin-top: 30px;
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+}
 
-    label{
-      display:block;
-      font-weight: 600;
-      font-size: 13px;
-      margin: 2px 0 6px;
-    }
-
-    input, select, textarea{
-      width:100%;
-      padding: 12px 12px;
-      border:1px solid var(--line);
-      border-radius: 12px;
-      font-size: 15px;
-      background:#fff;
-      outline: none;
-      transition: 0.15s;
-    }
-
-    input:focus, select:focus, textarea:focus{
-      border-color: rgba(37,99,235,0.55);
-      box-shadow: 0 0 0 4px rgba(37,99,235,0.14);
-    }
-
-    textarea{ min-height: 120px; resize: vertical; }
-
-    .full{ grid-column: 1 / -1; }
-
-    .helper{
-      margin: 6px 0 0;
-      color: var(--muted);
-      font-size: 12.5px;
-      line-height: 1.35;
-    }
-
-    .actions{
-      margin-top: 16px;
-      display:flex;
-      gap: 12px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-
-    button{
-      appearance:none;
-      border: none;
-      border-radius: 12px;
-      padding: 13px 16px;
-      font-size: 15px;
-      font-weight: 700;
-      background: var(--accent);
-      color:#fff;
-      cursor:pointer;
-      transition: 0.15s;
-      flex: 1;
-      min-width: 220px;
-    }
-
-    button:hover{ filter: brightness(0.95); }
-    button:active{ transform: translateY(1px); }
-
-    .smallnote{
-      color: var(--muted);
-      font-size: 12.5px;
-      line-height: 1.35;
-      flex: 1;
-      min-width: 220px;
-    }
-
-    .foot{
-      padding: 14px 22px 18px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 12.5px;
-      background: #fff;
-    }
-
-    .foot strong{ color: var(--ink); }
-  </style>
+@media (max-width: 700px) {
+  .wrapper {
+    margin: 30px 20px;
+    padding: 30px;
+  }
+  form {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 </head>
 
 <body>
-  <div class="topbar"></div>
 
-  <div class="shell">
-    <div class="card">
-      <div class="head">
-        <!-- Logo is optional. If you don't have it yet, it will just show as a broken image.
-             If you want to hide logo until you upload it, delete this <img> line. -->
-        <img class="logo" src="logo.png" alt="SR Home Repair Co. logo">
+<div class="wrapper">
 
-        <div class="titleblock">
-          <h1>Request an Estimate</h1>
-          <p class="sub">Tell us what you need. We’ll follow up with next steps and a clear estimate.</p>
+  <h1>Request a Free Estimate</h1>
+  <p class="sub">
+    Tell us about your project and we’ll get back to you as soon as possible.
+  </p>
 
-          <div class="hours">
-            <span class="dot"></span>
-            <span><strong>Hours:</strong> Mon–Fri 8am–6pm • Sat 9am–3pm • Sun Closed</span>
-          </div>
-        </div>
-      </div>
-
-      <form action="https://formsubmit.co/mario@srhomerepair.com" method="POST">
-        <input type="hidden" name="_subject" value="New Estimate Request - SR Home Repair Co.">
-        <input type="hidden" name="_captcha" value="false">
-
-        <div class="grid">
-          <div>
-            <label for="name">Full Name</label>
-            <input id="name" name="name" type="text" placeholder="Your name" required>
-          </div>
-
-          <div>
-            <label for="phone">Phone Number</label>
-            <input id="phone" name="phone" type="tel" placeholder="(319) 893-1161" required>
-          </div>
-
-          <div>
-            <label for="email">Email Address</label>
-            <input id="email" name="email" type="email" placeholder="you@example.com" required>
-          </div>
-
-          <div>
-            <label for="address">Property Address</label>
-            <input id="address" name="address" type="text" placeholder="Street, Waterloo IA" required>
-          </div>
-
-          <div class="full">
-            <label for="service">Type of Service</label>
-            <select id="service" name="service" required>
-              <option value="">Select one…</option>
-              <option>Rental Turnover / Make Ready</option>
-              <option>Drywall & Painting</option>
-              <option>Flooring Installation</option>
-              <option>Kitchen or Bath Update</option>
-              <option>Doors / Windows</option>
-              <option>General Repairs</option>
-            </select>
-            <p class="helper">If you’re not sure, pick “General Repairs” and describe it below.</p>
-          </div>
-
-          <div class="full">
-            <label for="details">Project Details</label>
-            <textarea id="details" name="details" placeholder="Example: 2 bedrooms need patch & paint, replace 3 baseboards, and install LVP in living room."></textarea>
-          </div>
-
-          <div class="full">
-            <label for="contact_time">Best Time to Contact You</label>
-            <select id="contact_time" name="contact_time">
-              <option>Weekdays (8am–6pm)</option>
-              <option>Weekday mornings (8am–12pm)</option>
-              <option>Weekday afternoons (12pm–6pm)</option>
-              <option>Saturday (9am–3pm)</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="actions">
-          <button type="submit">Send Estimate Request</button>
-          <div class="smallnote">
-            You’ll get a response as soon as possible during business hours.  
-            If it’s urgent, call/text: <strong>(319) 893-1161</strong>.
-          </div>
-        </div>
-      </form>
-
-      <div class="foot">
-        <strong>SR Home Repair Co.</strong> • Waterloo, Iowa<br>
-        We respect your time — clear communication and clean work.
-      </div>
-    </div>
+  <div class="hours">
+    <strong>Business Hours:</strong><br>
+    Monday – Friday: 8am – 6pm<br>
+    Saturday: 9am – 3pm<br>
+    Sunday: Closed
   </div>
+
+  <form action="https://formsubmit.co/mario@srhomerepair.com" method="POST">
+    <input type="hidden" name="_subject" value="New Estimate Request - SR Home Repair Co.">
+    <input type="hidden" name="_captcha" value="false">
+
+    <div>
+      <label>Full Name</label>
+      <input type="text" name="name" required>
+    </div>
+
+    <div>
+      <label>Phone Number</label>
+      <input type="tel" name="phone" required>
+    </div>
+
+    <div>
+      <label>Email</label>
+      <input type="email" name="email">
+    </div>
+
+    <div>
+      <label>Service Type</label>
+      <select name="service" required>
+        <option value="">Select Service</option>
+        <option>Rental Turnover</option>
+        <option>Drywall & Painting</option>
+        <option>Flooring Installation</option>
+        <option>Kitchen / Bath Update</option>
+        <option>General Repairs</option>
+      </select>
+    </div>
+
+    <div class="full">
+      <label>Project Details</label>
+      <textarea name="details"></textarea>
+    </div>
+
+    <button type="submit">Submit Estimate Request</button>
+  </form>
+
+  <div class="footer">
+    SR Home Repair Co. • Waterloo, Iowa
+  </div>
+
+</div>
+
 </body>
 </html>
